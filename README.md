@@ -13,11 +13,22 @@ Additionally, the project generates and saves visualizations of the sales predic
 ## Table of Contents
 
 1. [Data Preparation](#data-preparation)
-2. [Handling Missing Values](#handling-missing-values)
-3. [Modeling](#modeling)
+   - [Data Loading](#data-loading)
+   - [Order Date Handling](#order-date-handling)
+   - [Sales Handling](#sales-handling)
+   - [State Handling](#state-handling)
+2. [Top-Down Approach](#top-down-approach)
+   - [Data Aggregation](#data-aggregation)
+   - [Train-Test Split](#train-test-split)
+   - [Proportion of Forecasting by States Based on Previous Sales Year](#proportion-of-forecasting-by-states-based-on-previous-sales-year)
+3. [Modeling with SARIMA](#modeling-with-sarima)
 4. [Evaluation](#evaluation)
+   - [Metrics Calculation](#metrics-calculation)
+   - [State-wise Evaluation](#state-wise-evaluation)
+   - [Results Saving](#results-saving)
 5. [Visualization](#visualization)
-6. [Future Work](#future-work)
+6. [Modeling with XGBoost](#modeling-with-xgboost)
+
 
 ## Data Preparation
 
@@ -75,4 +86,3 @@ Defines and trains a SARIMA model on the training data and makes forecasts for t
 ![Missisipi Predictions vs Actual Graph](sarima_state_sales_figures/Mississippi_sales.png)
 
 ## Modeling w XGBOOSTING Model
-
