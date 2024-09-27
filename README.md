@@ -12,22 +12,17 @@ Additionally, the project generates and saves visualizations of the sales predic
 
 ## Table of Contents
 
-1. [Data Preparation](#data-preparation)
-   - [Data Loading](#data-loading)
-   - [Order Date Handling](#order-date-handling)
-   - [Sales Handling](#sales-handling)
-   - [State Handling](#state-handling)
-2. [Top-Down Approach](#top-down-approach)
-   - [Data Aggregation](#data-aggregation)
-   - [Train-Test Split](#train-test-split)
-   - [Proportion of Forecasting by States Based on Previous Sales Year](#proportion-of-forecasting-by-states-based-on-previous-sales-year)
-3. [Modeling with SARIMA](#modeling-with-sarima)
-4. [Evaluation](#evaluation)
+1. [Data Preparation](#data-preparation) 
+2. [Top-Down Approach](#top-down-approach)     
+- [Modeling with SARIMA](#modeling-with-sarima) 
+    - [Evaluation](#evaluation)
    - [Metrics Calculation](#metrics-calculation)
    - [State-wise Evaluation](#state-wise-evaluation)
    - [Results Saving](#results-saving)
-5. [Visualization](#visualization)
-6. [Modeling with XGBoost](#modeling-with-xgboost)
+    - [Visualization](#visualization) 
+
+- [Modeling with XGBoost](#modeling-with-xgboost)
+
 
 
 ## Data Preparation
@@ -65,7 +60,7 @@ Additionally, the project generates and saves visualizations of the sales predic
 Defines and trains a SARIMA model on the training data and makes forecasts for the test period.
 
 
-## Evaluation
+### Evaluation
 
 1. **Metrics Calculation**:
    - Computes Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and Mean Absolute Error (MAE) for the overall sales forecast.
@@ -76,7 +71,7 @@ Defines and trains a SARIMA model on the training data and makes forecasts for t
 3. **Results Saving**:
    - Saves the evaluation results (MSE, RMSE, MAE) in sarima_state_metrics.csv
 
-## Visualization
+### Visualization
 
 1. **Generate Plots**:
    - Creates plots comparing predicted and actual sales for each state.
