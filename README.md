@@ -71,13 +71,56 @@ Defines and trains a SARIMA model on the training data and makes forecasts for t
 3. **Results Saving**:
    - Saves the evaluation results (MSE, RMSE, MAE) in sarima_state_metrics.csv
 
-### Visualization
-
-1. **Generate Plots**:
-   - Creates plots comparing predicted and actual sales for each state.
-   - Saves plots in a directory named `state_sales_figures`.
 
 
-![Missisipi Predictions vs Actual Graph](sarima_state_sales_figures/Mississippi_sales.png)
 
 ## Modeling w XGBOOSTING Model
+
+# Bottom Up approach
+## Modeling w LSTM
+
+### LSTM Implementation
+
+1. **Data Preparation for LSTM**:
+   - The sales data was transformed into a 3D structure (samples, time steps, features). Each sample corresponds to a sequence of sales data. included sub-category data as features, which provided more granularity in our predictions.
+
+2. **Model Architecture**:
+
+ lstm_2 (LSTM)               (None, 1, 100)            66000     
+                                                                 
+ dropout_2 (Dropout)         (None, 1, 100)            0         
+                                                                 
+ lstm_3 (LSTM)               (None, 100)               80400     
+                                                                 
+ dropout_3 (Dropout)         (None, 100)               0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 101       
+                                                           
+
+
+3. **Training**:
+   - The model was trained using the training dataset for a specified number of epochs, with batch sizes adjusted to optimize performance. The mean squared error (MSE) was used as the loss function, and the Adam optimizer was employed for efficient training.
+
+![Missisipi Predictions vs Actual Graph](./other_files/Train_val_loss.png)
+![Missisipi Predictions vs Actual Graph](./other_files/Train_Val_mae.png)
+
+4. **Evaluation**:
+### Predictions and Aggregation
+
+- Initially, we predicted sales at the sub-category level, allowing the model to learn and capture detailed trends within each sub-category. This granularity is crucial as it helps in understanding how different products contribute to overall sales.
+- After making predictions for all sub-categories, we aggregated the results at the state level. This step provided a comprehensive view of sales forecasts by state, aligning with the project's overall objective.
+
+
+# Models Visualization
+
+Creates plots comparing predicted and actual sales for each state.
+Saves plots in a directory named `*models name*_state_sales_figures`.
+
+**SARIMA: sales for mississippi**
+![SARIMA Missisipi Predictions vs Actual Graph](sarima_state_sales_figures/Mississippi_sales.png)
+
+**XGBOOST sales for mississippi**
+
+
+**LSTM sales for mississippi**
+![LSTM Missisipi Predictions vs Actual Graph](lstm_state_sales_figures/Mississippi.png)
