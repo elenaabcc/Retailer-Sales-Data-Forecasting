@@ -184,7 +184,7 @@ For each forecasting model and the ensemble, the following metrics are calculate
 These metrics are computed for both individual models and the ensemble to assess performance comprehensively.
 
 ## Project Structure
-
+```
 Retailer-Sales-Forecasting/
 ├── data/
 │ └── Retailer Sales Data.csv
@@ -202,7 +202,7 @@ Retailer-Sales-Forecasting/
 ├── README.md
 └── requirements.txt
 
-
+```
 
 - *data/*: Contains the raw dataset.
 - *figures/*: Stores all generated plots for SARIMA, LSTM, and Ensemble models.
