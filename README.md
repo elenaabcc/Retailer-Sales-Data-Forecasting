@@ -106,6 +106,44 @@ To forecast the total sales for each state over the next 12 months using histori
   - Define the LSTM architecture with multiple layers, dropout, batch normalization, and regularization.
   - Compile and train the model with early stopping to prevent overfitting.
 
+```txt
+Model: "sequential"
+_______________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ lstm (LSTM)                 (None, 1, 100)            66000     
+                                                                 
+ dropout (Dropout)           (None, 1, 100)            0         
+                                                                 
+ batch_normalization (Batch  (None, 1, 100)            400       
+ Normalization)                                                  
+                                                                 
+ lstm_1 (LSTM)               (None, 1, 100)            80400     
+                                                                 
+ dropout_1 (Dropout)         (None, 1, 100)            0         
+                                                                 
+ batch_normalization_1 (Bat  (None, 1, 100)            400       
+ chNormalization)                                                
+                                                                 
+ lstm_2 (LSTM)               (None, 50)                30200     
+                                                                 
+ dropout_2 (Dropout)         (None, 50)                0         
+                                                                 
+ dense (Dense)               (None, 50)                2550      
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 50)                0         
+                                                                 
+ dropout_3 (Dropout)         (None, 50)                0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 51        
+                                                                 
+=================================================================
+Total params: 180001 (703.13 KB)
+Trainable params: 179601 (701.57 KB)
+Non-trainable params: 400 (1.56 KB)
+_______________________
+```
+
 #### 3. Model Evaluation
 - *Objective*: Evaluate the performance of the LSTM model.
 - *Steps*:
@@ -126,6 +164,15 @@ To forecast the total sales for each state over the next 12 months using histori
 ## Results
 
 The project provides comprehensive forecasts of monthly sales at the state level using both SARIMA and LSTM models. Additionally, an ensemble model combining both approaches offers improved accuracy. Detailed plots and evaluation metrics are generated for each state to facilitate performance comparison.
+
+SARIMA
+![Sarima](sarima_state_sales_figures/Mississippi_sales.png)
+
+LSTM
+![lstm](lstm_state_sales_figures/Mississippi.png)
+
+ENSAMBLE
+![esamble](esamble_state_sales_figures/Mississippi.png)
 
 ## Evaluation Metrics
 
@@ -165,41 +212,7 @@ Retailer-Sales-Forecasting/
 - *README.md*: This documentation.
 - *requirements.txt*: List of Python dependencies.
 
-## Installation
-
-1. *Clone the Repository*
-    bash
-    git clone https://github.com/yourusername/Retailer-Sales-Forecasting.git
-    cd Retailer-Sales-Forecasting
     
-
-2. *Create a Virtual Environment*
-    bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    
-
-3. *Install Dependencies*
-    bash
-    pip install -r requirements.txt
-    
-
-## Usage
-
-1. *Launch Jupyter Notebook*
-    bash
-    jupyter notebook
-    
-
-2. *Open the Notebook*
-    - Navigate to notebooks/Retailer Sales Data Forecasting.ipynb.
-
-3. *Run the Notebook*
-    - Execute each cell sequentially to perform data preprocessing, modeling, evaluation, and visualization.
-
-4. *View Results*
-    - Generated plots will be saved in the respective directories within figures/.
-    - Evaluation metrics are available in CSV files within the outputs/ directory.
 
 ## Dependencies
 
@@ -227,8 +240,4 @@ bash
 pip install -r requirements.txt
 
 
-## Author
 
-- *Elena Abcc*  
-  Email: elenaabcc@example.com  
-  GitHub: [github.com/elenaabcc](https://github.com/elenaabcc)
