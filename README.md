@@ -119,8 +119,11 @@ Saves plots in a directory named `*models name*_state_sales_figures`.
 **SARIMA: sales for mississippi**
 ![SARIMA Missisipi Predictions vs Actual Graph](sarima_state_sales_figures/Mississippi_sales.png)
 
-**XGBOOST sales for mississippi**
 
 
 **LSTM sales for mississippi**
 ![LSTM Missisipi Predictions vs Actual Graph](lstm_state_sales_figures/Mississippi.png)
+
+**ESAMBLE sales for mississippi**
+
+![LSTM Missisipi Predictions vs Actual Graph](esamble_state_sales_figures/Mississippi.png)
